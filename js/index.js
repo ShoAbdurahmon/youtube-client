@@ -11,8 +11,8 @@ async function renderUsers(){
                             </a>
                         </li>`
                     
-    for(let i of usersList){
-        users.innerHTML += `<li class="channel" data-id="1">
+    for(let i of users){
+        usersList.innerHTML += `<li class="channel" data-id="1">
                                 <a href="#">
                                     <img src="${i.fileName}" alt="channel-icon" width="30px" height="30px">
                                     <span>${i.username}</span>
