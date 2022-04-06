@@ -19,5 +19,9 @@ async function renderUsers(){
                                 </a>
                             </li>`
     }
+    if(window.localStorage.getItem('token')){
+
+}
 }
 renderUsers()
+
