@@ -18,21 +18,7 @@ async function request(route, method, body = null) {
 			body
 		})
 
-		if(response.status == 401) {
-			response = await response.json()
-			messageText.textContent = response.message
-
-			
-			
-		} else if(response.status != 200) {
-			response = await response.json()
-			messageText.textContent = response.message
-
-			
-			
-		} else {
-			return await response.json()
-		}
+		
 
 	} catch(error) {
 		alert(error.message)
