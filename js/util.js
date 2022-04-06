@@ -17,6 +17,13 @@ async function request(route, method, body = null) {
 			headers,
 			body
 		})
+        response = await response.json()
+        if(response.status == 201){
+            setTimeout(() => {
+                window.location = '/index.html'
+            })
+            return response
+        }
 
 		
 
