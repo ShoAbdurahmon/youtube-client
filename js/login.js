@@ -9,5 +9,6 @@ form.onsubmit = async e => {
 	formData.append('password', password);
 
     let response = await request('/login', 'POST', formData)
+    console.log(response)
     
 }
