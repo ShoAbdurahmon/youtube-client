@@ -1,2 +1,4 @@
-let response = request('/info', 'GET')
-console.log(response)
+async function renderUsers(){
+    let response = await request('/info', 'GET')
+    console.log(response.users)
+}
