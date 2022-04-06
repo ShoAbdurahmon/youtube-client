@@ -19,9 +19,6 @@ async function request(route, method, body = null) {
 		})
         response = await response.json()
         if(response.status == 201){
-            setTimeout(() => {
-                window.location = '/index.html'
-            })
             return response
         }
 

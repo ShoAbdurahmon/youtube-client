@@ -15,6 +15,9 @@ form.onsubmit = async function (event) {
 
     console.log(formData)
 
+
     let response = await request('/register', 'POST', formData)
     console.log(response)
+    window.localStorage.setItem('token', response.token)
+
 }
