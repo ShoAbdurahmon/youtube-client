@@ -6,8 +6,12 @@ form.onsubmit = async function (event) {
     let username = usernameInput.value
     let password = passwordInput.value
     let file = uploadInput.files[0]
-    console.log(file)
+    const formData = new FormData()
+	formData.append('username', username)
+	formData.append('password', password)
 
-    let response = await request('/register', 'POST', { username, password, file })
+	formData.append('file', file)
+
+    let response = await request('/register', 'POST', formData)
     console.log(response)
 }
