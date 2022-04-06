@@ -25,7 +25,7 @@ async function request(route, method, body = null) {
 		
 
 	} catch(error) {
-		alert(error.message)
+		console.log(error)
 
 		return setTimeout(() => {
 			return window.location = '/login'
