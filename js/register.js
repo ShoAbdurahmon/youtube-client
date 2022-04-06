@@ -7,6 +7,6 @@ form.onsubmit = async function (event) {
     let password = passwordInput.value
     let file = uploadInput.files[0]
 
-    let response = await request('/users', 'POST', { username, password, file })
+    let response = await request('/register', 'POST', { username, password, file })
     console.log(response)
 }
