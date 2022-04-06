@@ -4,14 +4,11 @@ function createElements(...elements) {
     return elements.map(el => document.createElement(el))
 }
 
-async function request(route, method, body) {
+async function request(route, method, headers) {
     try {
         let response = await fetch(backendApi + route, {
             method,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: body ? JSON.stringify(body): null
+            headers
         })
 
         if (response.status == 401) {
