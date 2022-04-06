@@ -4,26 +4,41 @@ function createElements(...elements) {
     return elements.map(el => document.createElement(el))
 }
 
-async function request(route, method, headers) {
+async function request(route, method, body = null) {
     try {
-        let response = await fetch(backendApi + route, {
-            method,
-            headers
-        })
+		let headers = {}
+		if(!(body instanceof FormData) && method != 'GET') {
+			headers['Content-Type'] = 'application/json'
+			body = JSON.stringify(body || null)
+		}
+	
+		let response = await fetch(backendApi + route, {
+			method,
+			headers,
+			body
+		})
 
-        if (response.status == 401) {
-            window.localStorage.removeItem('token')
-            window.location = './login.html'
-            return
-        }
+		if(response.status == 401) {
+			response = await response.json()
+			messageText.textContent = response.message
 
-        if (![200, 201].includes(response.status)) {
-            response = await response.json() 
-            return
-        }
+			
+			
+		} else if(response.status != 200) {
+			response = await response.json()
+			messageText.textContent = response.message
 
-        return await response.json()
-    } catch (error) {
-        console.log(error)
-    }
+			
+			
+		} else {
+			return await response.json()
+		}
+
+	} catch(error) {
+		alert(error.message)
+
+		return setTimeout(() => {
+			return window.location = '/login'
+		}, 1000)
+	}
 }
