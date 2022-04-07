@@ -32,3 +32,9 @@ async function request(route, method, body = null) {
 		}, 1000)
 	}
 }
+
+
+function setUser (user){
+    admin.setAttribute('href', '/admin.html')
+    admin_rasm.setAttribute('src', `http://localhost:9090/${user.fileName}`)
+}
