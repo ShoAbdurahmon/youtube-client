@@ -33,7 +33,7 @@ async function request(route, method, body = null) {
 	}
 }
 
-if (window.localStorage.getItem('token') && JSON.parse(window.localStorage.getItem('user')) && window.location == '/index.html') {
+if (window.localStorage.getItem('token') && JSON.parse(window.localStorage.getItem('user')) && window.location.href == 'http://127.0.0.1:5500/index.html') {
     admin.setAttribute('href', '/admin.html')
     admin_rasm.setAttribute('src', `http://localhost:9090/${user.fileName}`)
 }
