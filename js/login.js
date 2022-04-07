@@ -12,6 +12,6 @@ form.onsubmit = async e => {
     console.log(response)
     window.localStorage.setItem('token', response.token)
     window.localStorage.setItem('user',response.user)
-    admin.setAttribute('href', '/admin.html')
-    admin_rasm.setAttribute('src', `http://localhost:9090/${response.user.fileName}`)
+    // admin.setAttribute('href', '/admin.html')
+    // admin_rasm.setAttribute('src', `http://localhost:9090/${response.user.fileName}`)
 }
