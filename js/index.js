@@ -12,7 +12,9 @@ async function renderUsers(){
                         </li>`
                     
     for(let i of users){
-        usersList.innerHTML += `<li class="channel" onclick="showUserMedia(${JSON.stringify(i)})" data-id="1">
+        let j = JSON.stringify(i)
+        console.log(j)
+        usersList.innerHTML += `<li class="channel" onclick="showUserMedia(${j})" data-id="1">
                                 <a href="#">
                                     <img src="http://localhost:9090/${i.fileName}" alt="channel-icon" width="30px" height="30px">
                                     <span>${i.username}</span>
@@ -21,8 +23,10 @@ async function renderUsers(){
     }
     
 }
+
+
 function showUserMedia(user){
-    JSON.parse(user)
+    console.log(user)
     videolar.innerHTML = null
     for(let i of user.videos){
         videolar.innerHTML += `<li class="iframe">
