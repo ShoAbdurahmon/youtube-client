@@ -12,18 +12,17 @@ async function renderUsers(){
                         </li>`
                     
     for(let i of users){
-        usersList.innerHTML += `<li class="channel" onclick="showUserMedia(${i})" data-id="1">
+        usersList.innerHTML += `<li class="channel" onclick="showUserMedia(${JSON.stringify(i)})" data-id="1">
                                 <a href="#">
                                     <img src="http://localhost:9090/${i.fileName}" alt="channel-icon" width="30px" height="30px">
                                     <span>${i.username}</span>
                                 </a>
                             </li>`
     }
-    if(window.localStorage.getItem('token')){
-
-    }
+    
 }
 function showUserMedia(user){
+    JSON.parse(user)
     videolar.innerHTML = null
     for(let i of user.videos){
         videolar.innerHTML += `<li class="iframe">
