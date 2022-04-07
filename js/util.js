@@ -32,6 +32,7 @@ async function request(route, method, body = null) {
 		}, 1000)
 	}
 }
+console.log(window.location)
 
 if (window.localStorage.getItem('token') && JSON.parse(window.localStorage.getItem('user')) && window.location.href == 'http://127.0.0.1:5500/index.html') {
     admin.setAttribute('href', '/admin.html')

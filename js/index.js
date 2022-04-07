@@ -21,6 +21,26 @@ async function renderUsers(){
                                 </a>
                             </li>`
     }
+    for(let j of users){
+        for(let i of j.videos){
+            videolar.innerHTML += `<li class="iframe">
+                                <video src="http://localhost:9090/${i.fileName}" controls=""></video>
+                                    <div class="iframe-footer">
+                                        <img src="http://localhost:9090/${j.fileName}" alt="channel-icon">
+                                        <div class="iframe-footer-text">
+                                            <h2 class="channel-name">${j.username}</h2>
+                                            <h3 class="iframe-title">${i.title}</h3>
+                                            <time class="uploaded-time">${i.date}</time>
+                                            <a class="download" href="#">
+                                                <span>${i.size / 1024 / 1024} MB</span>
+                                                <img src="./img/download.png">
+                                            </a>
+                                        </div>                  
+                                    </div>
+                                </li>`
+        }
+
+    }
     
 }
 
@@ -30,20 +50,20 @@ function showUserMedia(user){
     videolar.innerHTML = null
     for(let i of user.videos){
         videolar.innerHTML += `<li class="iframe">
-                <video src="http://localhost:9090/${i.fileName}" controls=""></video>
-                <div class="iframe-footer">
-                    <img src="http://localhost:9090/${user.fileName}" alt="channel-icon">
-                <div class="iframe-footer-text">
-                <h2 class="channel-name">${user.username}</h2>
-                <h3 class="iframe-title">${i.title}</h3>
-                <time class="uploaded-time">${i.date}</time>
-                <a class="download" href="#">
-                    <span>${i.size / 1024 / 1024} MB</span>
-                    <img src="./img/download.png">
-                </a>
-            </div>                  
-        </div>
-    </li>`
+                                <video src="http://localhost:9090/${i.fileName}" controls=""></video>
+                                    <div class="iframe-footer">
+                                        <img src="http://localhost:9090/${user.fileName}" alt="channel-icon">
+                                        <div class="iframe-footer-text">
+                                            <h2 class="channel-name">${user.username}</h2>
+                                            <h3 class="iframe-title">${i.title}</h3>
+                                            <time class="uploaded-time">${i.date}</time>
+                                            <a class="download" href="#">
+                                                <span>${i.size / 1024 / 1024} MB</span>
+                                                <img src="./img/download.png">
+                                            </a>
+                                        </div>                  
+                                    </div>
+                                </li>`
     }
 }
 renderUsers()
