@@ -11,7 +11,7 @@ form.onsubmit = async e => {
     let response = await request('/login', 'POST', formData)
     console.log(response)
     window.localStorage.setItem('token', response.token)
-    window.localStorage.setItem('user',response.user)
+    window.localStorage.setItem('user',JSON.stringify(response.user))
     window.location = 'index.html'
     setUser(response.user)
 
