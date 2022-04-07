@@ -12,7 +12,7 @@ async function renderUsers(){
                         </li>`
                     
     for(let i of users){
-        usersList.innerHTML += `<li class="channel" data-id="1">
+        usersList.innerHTML += `<li class="channel" onclick="showUserMedia(${i})" data-id="1">
                                 <a href="#">
                                     <img src="http://localhost:9090/${i.fileName}" alt="channel-icon" width="30px" height="30px">
                                     <span>${i.username}</span>
@@ -21,7 +21,28 @@ async function renderUsers(){
     }
     if(window.localStorage.getItem('token')){
 
+    }
 }
+function showUserMedia(user){
+    videolar.innerHTML = null
+    for(let i of user.videos){
+        videolar.innerHTML += `<li class="iframe">
+                <video src="http://localhost:9090/${i.fileName}" controls=""></video>
+                <div class="iframe-footer">
+                    <img src="http://localhost:9090/${user.fileName}" alt="channel-icon">
+                <div class="iframe-footer-text">
+                <h2 class="channel-name">${user.username}</h2>
+                <h3 class="iframe-title">${i.title}</h3>
+                <time class="uploaded-time">${i.date}</time>
+                <a class="download" href="#">
+                    <span>${i.size / 1024 / 1024} MB</span>
+                    <img src="./img/download.png">
+                </a>
+            </div>                  
+        </div>
+    </li>`
+    }
 }
 renderUsers()
+
 
