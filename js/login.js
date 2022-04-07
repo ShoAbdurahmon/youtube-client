@@ -13,6 +13,5 @@ form.onsubmit = async e => {
     window.localStorage.setItem('token', response.token)
     window.localStorage.setItem('user',JSON.stringify(response.user))
     window.location = 'index.html'
-    setUser(response.user)
 
 }

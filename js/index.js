@@ -24,5 +24,4 @@ async function renderUsers(){
 }
 }
 renderUsers()
-setUser()
 
