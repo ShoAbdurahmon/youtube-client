@@ -26,13 +26,11 @@ async function request(route, method, body = null) {
 
 	} catch(error) {
 		console.log(error)
-
-		
 	}
 }
 console.log(window.location)
 
-if(window.location.href != 'https://youtube-client1.netlify.app/index.html' && window.location.href != 'https://youtube-client1.netlify.app/login.html'){
+if(window.location.href != 'https://youtube-client1.netlify.app/register.html' && window.location.href != 'https://youtube-client1.netlify.app/login.html'){
 	if (window.localStorage.getItem('token') && JSON.parse(window.localStorage.getItem('user')) && window.location.href == 'https://youtube-client1.netlify.app/index.html') {
 		let user = JSON.parse(window.localStorage.getItem('user'))
 		admin.setAttribute('href', 'https://youtube-client1.netlify.app/admin.html')
