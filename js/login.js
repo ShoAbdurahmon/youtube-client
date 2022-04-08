@@ -12,6 +12,6 @@ form.onsubmit = async e => {
     console.log(response)
     window.localStorage.setItem('token', response.token)
     window.localStorage.setItem('user',JSON.stringify(response.user))
-    window.location = 'index.html'
+    window.location = '/index.html'
 
 }

@@ -71,7 +71,3 @@ function showUserMedia(user){
 renderUsers()
 
 
-setTimeout(() => {
-    console.log('hello')
-    renderUsers()
-},1000)
