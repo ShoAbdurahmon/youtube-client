@@ -1,4 +1,7 @@
+const { render } = require("express/lib/response")
+
 async function renderUsers(){
+    console.log('hello')
     let response = await request('/info', 'GET')
     users = response.users
 
@@ -69,3 +72,6 @@ function showUserMedia(user){
 renderUsers()
 
 
+setTimeout(() => {
+    renderUsers()
+},1000)
