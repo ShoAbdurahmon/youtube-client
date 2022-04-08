@@ -1,4 +1,3 @@
-const { render } = require("express/lib/response")
 
 async function renderUsers(){
     console.log('hello')
