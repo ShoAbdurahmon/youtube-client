@@ -1,4 +1,4 @@
-const backendApi = 'http://localhost:9090'
+const backendApi = 'http://192.168.1.88:9090'
 
 function createElements(...elements) {
     return elements.map(el => document.createElement(el))
