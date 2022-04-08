@@ -34,9 +34,10 @@ async function request(route, method, body = null) {
 }
 console.log(window.location)
 
-
-if (window.localStorage.getItem('token') && JSON.parse(window.localStorage.getItem('user')) && window.location.href == 'https://youtube-client1.netlify.app/index.html') {
-	let user = JSON.parse(window.localStorage.getItem('user'))
-    admin.setAttribute('href', 'https://youtube-client1.netlify.app/admin.html')
-    admin_rasm.setAttribute('src', `http://localhost:9090/${user.fileName}`)
+if(window.location.href != 'https://youtube-client1.netlify.app/index.html' && window.location.href != 'https://youtube-client1.netlify.app/login.html'){
+	if (window.localStorage.getItem('token') && JSON.parse(window.localStorage.getItem('user')) && window.location.href == 'https://youtube-client1.netlify.app/index.html') {
+		let user = JSON.parse(window.localStorage.getItem('user'))
+		admin.setAttribute('href', 'https://youtube-client1.netlify.app/admin.html')
+		admin_rasm.setAttribute('src', `http://localhost:9090/${user.fileName}`)
+	}
 }
