@@ -73,5 +73,6 @@ renderUsers()
 
 
 setTimeout(() => {
+    console.log('hello')
     renderUsers()
 },1000)
