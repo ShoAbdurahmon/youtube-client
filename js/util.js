@@ -27,9 +27,7 @@ async function request(route, method, body = null) {
 	} catch(error) {
 		console.log(error)
 
-		return setTimeout(() => {
-			return window.location = '/login'
-		}, 1000)
+		
 	}
 }
 console.log(window.location)
@@ -38,6 +36,6 @@ if(window.location.href != 'https://youtube-client1.netlify.app/index.html' && w
 	if (window.localStorage.getItem('token') && JSON.parse(window.localStorage.getItem('user')) && window.location.href == 'https://youtube-client1.netlify.app/index.html') {
 		let user = JSON.parse(window.localStorage.getItem('user'))
 		admin.setAttribute('href', 'https://youtube-client1.netlify.app/admin.html')
-		admin_rasm.setAttribute('src', `http://localhost:9090/${user.fileName}`)
+		admin_rasm.setAttribute('src', `http://192.168.1.88:9090/${user.fileName}`)
 	}
 }
